@@ -10,8 +10,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation platform('org.junit:junit-bom')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'mysql:mysql-connector-java'
+    implementation 'jakarta.servlet:jakarta.servlet-api:5.0.0'  // 서블릿 API 사용
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'  // JSP 및 JSTL 사용
+    compileOnly 'org.apache.tomcat.embed:tomcat-embed-core'  // 톰캣 10 사용
 }
 
 test {

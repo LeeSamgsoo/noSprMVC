@@ -21,7 +21,7 @@ public class UserController extends HttpServlet {
         req.setAttribute("users", users);
 
         // JSP로 포워딩
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/users.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("users.jsp");
         dispatcher.forward(req, resp);
     }
 }

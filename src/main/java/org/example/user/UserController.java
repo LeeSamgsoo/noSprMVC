@@ -1,9 +1,12 @@
 package org.example.user;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 public class UserController extends HttpServlet {
@@ -12,16 +15,14 @@ public class UserController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-
         List<String> users = userRepository.getUsers();
-        out.println("<html><body>");
-        out.println("<h1>User List</h1>");
-        for (String user : users) {
-            out.println("<p>" + user + "</p>");
-        }
-        out.println("</body></html>");
+
+        // 사용자 목록을 요청에 추가 (JSP에서 참조 가능하도록)
+        req.setAttribute("users", users);
+
+        // JSP로 포워딩
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/users.jsp");
+        dispatcher.forward(req, resp);
     }
 }
 

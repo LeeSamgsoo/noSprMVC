@@ -1,4 +1,15 @@
-## InteliJ Tomcat 설정방법
+## 24.09.27
+## DB 연결 오류 해결
+### DBConnection.java에 드라이버 클래스 수동 로드 추가
+
+![image](https://github.com/user-attachments/assets/a17200f8-97fc-41b3-a7fd-1bc68404444e)
+
+### Gradle에 Mysql 버전 명시
+
+![image](https://github.com/user-attachments/assets/512422e6-eccb-45c9-8268-5eaf85f7b558)
+
+## 24.09.26
+## InteliJ Tomcat 설정방법 
 - InteliJ Community(무료버전)에서는 유료버전처럼 간단하게 사용할 수 없고, 직접 다운로드 해줘야 합니다.
 
 ### 플러그인에서 Tomcat 설치 및 적용

@@ -18,6 +18,8 @@ dependencies {
     compileOnly 'org.apache.tomcat.embed:tomcat-embed-core'  // 톰캣 10 사용
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0'
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 test {

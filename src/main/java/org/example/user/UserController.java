@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserController extends HttpServlet {
@@ -15,7 +16,7 @@ public class UserController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<String> users = userRepository.getUsers();
+        List<String> users = new ArrayList<>();//userRepository.getUsers();
 
         // 사용자 목록을 요청에 추가 (JSP에서 참조 가능하도록)
         req.setAttribute("users", users);

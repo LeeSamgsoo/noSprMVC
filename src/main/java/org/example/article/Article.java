@@ -11,7 +11,7 @@ public class Article {
     private String content;
     private Date createDate;
     private Date modifyDate;
-    private SiteUser author;
+    private Integer authorId;
 
     public Integer getId() {
         return id;
@@ -33,9 +33,7 @@ public class Article {
         return modifyDate;
     }
 
-    public SiteUser getAuthor() {
-        return author;
-    }
+    public Integer getAuthorId() { return authorId; }
 
     public void setId(Integer id) {
         this.id = id;
@@ -57,7 +55,5 @@ public class Article {
         this.modifyDate = modifyDate;
     }
 
-    public void setAuthor(SiteUser author) {
-        this.author = author;
-    }
+    public void setAuthorId(Integer authorId) { this.authorId = authorId; }
 }

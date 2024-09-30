@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleRepository {
-    public List<Article> getAllUsers() {
+    public List<Article> getAll() {
         List<Article> articles = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM article")) {
@@ -21,9 +21,9 @@ public class ArticleRepository {
                 article.setId(rs.getInt("id"));
                 article.setTitle(rs.getString("title"));
                 article.setContent(rs.getString("content"));
-                article.setCreateDate(rs.getDate("createDate"));
-                article.setModifyDate(rs.getDate("modifyDate"));
-                article.setAuthor(rs.getInt("author_id"));
+                article.setCreateDate(rs.getDate("create_date"));
+                article.setModifyDate(rs.getDate("modify_date"));
+                article.setAuthorId(rs.getInt("author_id"));
 
                 articles.add(article);
             }
